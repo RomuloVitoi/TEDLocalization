@@ -5,6 +5,12 @@ TEDLocalization
 
 `TEDLocalization` will traverse your view hierarchy and localize the view's text strings. It works with `UILabel`s, `UIButton`s, and `UITextField`s. 
 
+## Installation
+
+```
+pod 'TEDLocalization', :git => 'https://github.com/RomuloVitoi/TEDLocalization.git', :commit => '6d347a97d5d64786bc2ad398190b4ab540a9e53f'
+```
+
 ## How to use
 
 In your storyboard or XIB, add localization keys to your views:
