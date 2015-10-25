@@ -102,7 +102,13 @@
     
     NSString *localizedPlaceholder = Localize(textField.placeholder);
     if (![textField.placeholder isEqualToString:localizedPlaceholder]) {
-        textField.placeholder = localizedPlaceholder;
+        if ([textField.attributedPlaceholder length]) {
+            NSDictionary *attributes = [(NSAttributedString *)textField.attributedPlaceholder attributesAtIndex:0 effectiveRange:NULL];
+            NSAttributedString *str = [[NSAttributedString alloc] initWithString:localizedPlaceholder attributes:attributes];
+            textField.attributedPlaceholder = str;
+        } else {
+            textField.placeholder = localizedPlaceholder;
+        }
     }
 }
 
